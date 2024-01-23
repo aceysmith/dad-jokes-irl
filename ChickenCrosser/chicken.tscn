@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4nmrvt3xmybg"]
+
+[ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_4n3i8"]
+[ext_resource type="Texture2D" uid="uid://cv6vd3v8diftx" path="res://ChickenCrosser/chicken_thumb.jpg" id="2_kkwtf"]
+[ext_resource type="Script" path="res://ChickenCrosser/chicken.gd" id="2_ye1vx"]
+
+[node name="Joke" instance=ExtResource("1_4n3i8")]
+script = ExtResource("2_ye1vx")
+
+[node name="ColorRect" type="ColorRect" parent="." index="3"]
+offset_left = 224.0
+offset_top = -54.0
+offset_right = 533.0
+offset_bottom = 728.0
+color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." index="4"]
+offset_left = 224.0
+offset_top = -54.0
+offset_right = 243.0
+offset_bottom = 728.0
+color = Color(0.893, 0.94, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." index="5"]
+offset_left = 514.0
+offset_top = -59.0
+offset_right = 533.0
+offset_bottom = 723.0
+color = Color(0.893, 0.94, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." index="6"]
+offset_left = 356.0
+offset_top = -54.0
+offset_right = 372.0
+offset_bottom = 726.0
+color = Color(0.893, 0.94, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." index="7"]
+offset_left = 384.0
+offset_top = -52.0
+offset_right = 400.0
+offset_bottom = 724.0
+color = Color(0.893, 0.94, 0, 1)
+
+[node name="Chicken" type="Sprite2D" parent="." index="8"]
+position = Vector2(66, 372)
+scale = Vector2(0.484, 0.484)
+texture = ExtResource("2_kkwtf")
+flip_h = true
+
+[node name="Question" type="Label" parent="." index="9"]
+offset_left = 12.0
+offset_top = 68.0
+offset_right = 703.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Why did the Chicken cross the road?"
+
+[node name="Punchline" type="Label" parent="." index="10"]
+visible = false
+offset_left = 15.0
+offset_top = 514.0
+offset_right = 706.0
+offset_bottom = 569.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "To get to the other side"
+horizontal_alignment = 1
