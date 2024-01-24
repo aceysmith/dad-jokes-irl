@@ -20,11 +20,11 @@ func _ready() -> void:
 	
 	# Connect to the timeout functino on the timer
 	timer.timeout.connect(func():
-		# Emit finished because this state is finished
-		state_finished.emit()
-		
 		# Disable this state
 		disable()
+
+		# Emit finished because this state is finished
+		state_finished.emit()
 	)
 	
 	# Start the timer whenever this state is enabled
