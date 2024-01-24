@@ -48,7 +48,7 @@ scale = Vector2(0.484, 0.484)
 texture = ExtResource("2_kkwtf")
 flip_h = true
 
-[node name="Question" type="Label" parent="." index="9"]
+[node name="QuestionLabel" type="Label" parent="." index="9"]
 offset_left = 12.0
 offset_top = 68.0
 offset_right = 703.0
@@ -57,7 +57,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Why did the Chicken cross the road?"
 
-[node name="Punchline" type="Label" parent="." index="10"]
+[node name="PunchlineLabel" type="Label" parent="." index="10"]
+unique_name_in_owner = true
 visible = false
 offset_left = 15.0
 offset_top = 514.0
@@ -65,5 +66,16 @@ offset_right = 706.0
 offset_bottom = 569.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "To get to the other side"
+text = "To get to the other side, duh"
+horizontal_alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="." index="11"]
+unique_name_in_owner = true
+offset_left = 166.0
+offset_top = 582.0
+offset_right = 592.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Press Right Arrow to find out!"
 horizontal_alignment = 1
