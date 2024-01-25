@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dorooitix3ca3"]
+
+[ext_resource type="Script" path="res://FishTank/tank.gd" id="1_8qfc7"]
+[ext_resource type="Texture2D" uid="uid://bxnopgrapq85l" path="res://FishTank/fish-asset/tank.png" id="2_rhqwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw6wx"]
+size = Vector2(37, 37)
+
+[node name="Tank" type="CharacterBody2D"]
+script = ExtResource("1_8qfc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_rhqwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -3.5)
+shape = SubResource("RectangleShape2D_gw6wx")

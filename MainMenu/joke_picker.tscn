@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://db6jpdfsocp68"]
+[gd_scene load_steps=7 format=3 uid="uid://db6jpdfsocp68"]
 
 [ext_resource type="Script" path="res://MainMenu/joke_picker.gd" id="1_l3ia7"]
 [ext_resource type="PackedScene" uid="uid://doxto7vhpcuw7" path="res://MainMenu/joke_button.tscn" id="1_n1pko"]
 [ext_resource type="Texture2D" uid="uid://cv6vd3v8diftx" path="res://ChickenCrosser/chicken_thumb.jpg" id="1_q2vt7"]
 [ext_resource type="PackedScene" uid="uid://b4nmrvt3xmybg" path="res://ChickenCrosser/chicken.tscn" id="4_p4tjd"]
+[ext_resource type="Texture2D" uid="uid://tbocv46oh888" path="res://FishTank/fish-asset/Realistic_Fish_Head_HD.png" id="5_002wc"]
+[ext_resource type="PackedScene" uid="uid://b4lvn4of63iuh" path="res://FishTank/FishTank.tscn" id="6_7sfc6"]
 
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
@@ -27,3 +29,18 @@ theme_override_font_sizes/font_size = 30
 text = "CLUCK HERE FOR A GOOD TIME"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="JokeButton2" parent="JokesBox" instance=ExtResource("1_n1pko")]
+layout_mode = 2
+texture_normal = ExtResource("5_002wc")
+stretch_mode = 1
+joke_packed_scene = ExtResource("6_7sfc6")
+
+[node name="Label" type="Label" parent="JokesBox/JokeButton2"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 30
+text = "FISH TANK"
+horizontal_alignment = 1
+vertical_alignment = 1
