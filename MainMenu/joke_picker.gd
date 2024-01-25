@@ -22,6 +22,8 @@ func show_joke(joke_scene: PackedScene):
 	current_joke = joke
 	joke.joke_ended.connect(dismiss_joke)
 	add_child(joke)
+	jokes_box.visible = false
 
 func dismiss_joke(node: Node):
+	jokes_box.visible = true
 	node.queue_free()
