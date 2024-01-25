@@ -7,7 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var cant_move = false
 var is_touching_cat = false
-
+var can_win = false
 signal won()
 
 func _process(delta):
@@ -15,10 +15,16 @@ func _process(delta):
 	velocity.y += gravity * delta
 	move_and_slide()
 
+func stop_moving():
+	print("stop")
+	cant_move = true
+	
 func _ready() -> void:
+	add_to_group("cats")
+
 	randomize() 
 	var rng = RandomNumberGenerator.new()
-	
+
 	
 	if randi() % 2:
 		animated_sprite_2d.flip_h = true
@@ -79,3 +85,7 @@ func _on_catcol_area_entered(area):
 		cant_move = true
 		is_touching_cat = true
 	
+
+
+func _on_timer_timeout():
+	can_win = true

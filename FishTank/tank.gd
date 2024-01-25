@@ -16,17 +16,12 @@ func enable_movement():
 func _ready():
 	# select random keys
 	randomize() 
-	var key_bindings = ['ui_left', 'ui_right', 'ui_down', 'ui_up', 'ui_enter']
+	var key_bindings = ['ui_left', 'ui_right', 'ui_down', 'ui_up', 'ui_accept']
 	key_bindings.shuffle()
 	left = key_bindings.pop_front()
-	key_bindings.shuffle()
 	right = key_bindings.pop_front()
-	key_bindings.shuffle()
 	up = key_bindings.pop_front()
-	key_bindings.shuffle()
 	down = key_bindings.pop_front()
-	
-	
 	
 	
 func get_input():

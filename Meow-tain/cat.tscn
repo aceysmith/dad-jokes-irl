@@ -186,7 +186,7 @@ script = ExtResource("5_7mbav")
 animated_sprite = NodePath("../../../AnimatedSprite2D")
 animation_name = "walk"
 
-[node name="MoveComponent" type="Node" parent="States/Walk" node_paths=PackedStringArray("cat")]
+[node name="MoveComponent" type="Node" parent="States/Walk" node_paths=PackedStringArray("cat") groups=["cat"]]
 script = ExtResource("6_gk0s4")
 cat = NodePath("../../..")
 
@@ -199,5 +199,11 @@ script = ExtResource("7_n7dkq")
 position = Vector2(1.75, 0.25)
 shape = SubResource("RectangleShape2D_igxwl")
 
+[node name="Timer" type="Timer" parent="." groups=["cat"]]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
 [connection signal="area_entered" from="cat-col" to="." method="_on_catcol_area_entered"]
 [connection signal="body_entered" from="cat-col" to="." method="_on_catcol_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

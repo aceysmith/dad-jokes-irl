@@ -18,6 +18,7 @@ offset_right = 834.0
 offset_bottom = 790.0
 
 [node name="two-fish" type="Label" parent="."]
+layout_mode = 0
 offset_left = 240.0
 offset_top = 56.0
 offset_right = 533.0
@@ -28,6 +29,7 @@ text = "two fish in a tank..."
 
 [node name="i cant drive" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 78.0
 offset_top = 130.0
 offset_right = 645.0

@@ -6,6 +6,6 @@ class_name AnimationManager
 
 
 func set_animation():
-	print("animation_name + : " + str(animation_name))
+
 	animated_sprite.play(animation_name)
 	
