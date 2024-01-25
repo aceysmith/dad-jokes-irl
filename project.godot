@@ -22,6 +22,10 @@ window/size/viewport_height=720
 window/size/resizable=false
 window/dpi/allow_hidpi=false
 
+[editor]
+
+movie_writer/movie_file="/Users/graham/Documents/playtime/dadjoke/output.avi"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

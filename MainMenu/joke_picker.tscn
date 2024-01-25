@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://db6jpdfsocp68"]
+[gd_scene load_steps=7 format=3 uid="uid://db6jpdfsocp68"]
 
 [ext_resource type="Script" path="res://MainMenu/joke_picker.gd" id="1_l3ia7"]
 [ext_resource type="PackedScene" uid="uid://doxto7vhpcuw7" path="res://MainMenu/joke_button.tscn" id="1_n1pko"]
 [ext_resource type="Texture2D" uid="uid://cv6vd3v8diftx" path="res://ChickenCrosser/chicken_thumb.jpg" id="1_q2vt7"]
 [ext_resource type="PackedScene" uid="uid://b4nmrvt3xmybg" path="res://ChickenCrosser/chicken.tscn" id="4_p4tjd"]
+[ext_resource type="Texture2D" uid="uid://7hdqdnpq344o" path="res://Meow-tain/catassets/images-4.jpg" id="5_vulum"]
+[ext_resource type="PackedScene" uid="uid://bibjcr2fyisnd" path="res://Meow-tain/meow_tain.tscn" id="6_mbaou"]
 
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
@@ -28,3 +30,17 @@ theme_override_font_sizes/font_size = 30
 text = "CLUCK HERE FOR A GOOD TIME"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="JokeButton2" parent="JokesBox" instance=ExtResource("1_n1pko")]
+layout_mode = 2
+texture_normal = ExtResource("5_vulum")
+joke_packed_scene = ExtResource("6_mbaou")
+
+[node name="Label" type="Label" parent="JokesBox/JokeButton2"]
+layout_mode = 0
+offset_right = 242.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 30
+text = "CATS!"
+horizontal_alignment = 1
+vertical_alignment = 1
