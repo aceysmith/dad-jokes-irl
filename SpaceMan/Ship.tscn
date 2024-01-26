@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=3 uid="uid://cdh4ap1x42t0q"]
+
+[ext_resource type="Script" path="res://SpaceMan/Ship.gd" id="1_3720t"]
+[ext_resource type="Texture2D" uid="uid://tyibohqmqcbh" path="res://SpaceMan/space-sprites/Main Ship - Engines - Base Engine.png" id="2_ddi4y"]
+[ext_resource type="Texture2D" uid="uid://dp2hxlxvesxt0" path="res://SpaceMan/space-sprites/Main Ship - Base - Full health.png" id="3_6rdwa"]
+[ext_resource type="Texture2D" uid="uid://djdk2rjjvybko" path="res://SpaceMan/space-sprites/Main Ship - Engines - Base Engine - Powering.png" id="4_rk6vw"]
+[ext_resource type="Texture2D" uid="uid://d4ne01ydf381l" path="res://SpaceMan/space-sprites/Main Ship - Engines - Base Engine - Idle.png" id="5_71ixx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axbji"]
+atlas = ExtResource("4_rk6vw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjrov"]
+atlas = ExtResource("4_rk6vw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csnwi"]
+atlas = ExtResource("4_rk6vw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vopop"]
+atlas = ExtResource("4_rk6vw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dojyq"]
+atlas = ExtResource("5_71ixx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijg2h"]
+atlas = ExtResource("5_71ixx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5xp4"]
+atlas = ExtResource("5_71ixx")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfjdn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axbji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjrov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csnwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vopop")
+}],
+"loop": true,
+"name": &"blastoff",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dojyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijg2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5xp4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Ship" type="Node2D"]
+script = ExtResource("1_3720t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_ddi4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_6rdwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_rfjdn")
+animation = &"blastoff"
+frame_progress = 0.628514
