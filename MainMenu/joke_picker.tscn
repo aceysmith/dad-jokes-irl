@@ -13,6 +13,7 @@
 
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
+auto_play = true
 
 [node name="JokesBox" type="HFlowContainer" parent="."]
 unique_name_in_owner = true
@@ -78,3 +79,28 @@ theme_override_font_sizes/font_size = 30
 text = "Pile Of Cats"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="YouWinScreen" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_right = 720.0
+offset_bottom = 720.0
+
+[node name="YouWinLabel" type="Label" parent="YouWinScreen"]
+offset_top = 306.0
+offset_right = 720.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="YouWinScreen"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 448.0
+offset_right = 407.0
+offset_bottom = 479.0
+text = "Free Play"
+
+[connection signal="pressed" from="YouWinScreen/Button" to="." method="enable_free_play"]
