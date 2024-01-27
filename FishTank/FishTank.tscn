@@ -503,7 +503,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="JokeIntro" parent="." index="7" instance=ExtResource("5_f1aww")]
-visible = false
 
 [node name="Timer" type="Timer" parent="." index="8"]
 wait_time = 5.0
