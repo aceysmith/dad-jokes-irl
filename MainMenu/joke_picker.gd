@@ -1,8 +1,10 @@
 extends Node2D
 
-@onready var jokes_box = $JokesBox
+@onready var jokes_box = %JokesBox
+@export var auto_play = false
+@onready var you_win_screen = %YouWinScreen
 
-var current_joke: BaseJoke
+var remaining_jokes: Array[PackedScene] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,12 +16,22 @@ func _ready():
 			push_error("Scene not fully configured, removing from list")	
 			joke_button.queue_free()
 		else:
+			remaining_jokes.append(joke_button.joke_packed_scene)
 			joke_button.joke_selected.connect(show_joke)
+
+	if auto_play:
+		remaining_jokes.shuffle()
+		show_next_joke()
+
+func show_next_joke():
+	if len(remaining_jokes) > 0:
+		show_joke(remaining_jokes.pop_front())
+	else:
+		you_win_screen.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func show_joke(joke_scene: PackedScene):
 	var joke = joke_scene.instantiate() as BaseJoke
-	current_joke = joke
 	joke.joke_ended.connect(dismiss_joke)
 	add_child(joke)
 	jokes_box.visible = false
@@ -27,3 +39,10 @@ func show_joke(joke_scene: PackedScene):
 func dismiss_joke(node: Node):
 	jokes_box.visible = true
 	node.queue_free()
+	if auto_play:
+		show_next_joke()
+
+func enable_free_play():
+	auto_play = false
+	jokes_box.visible = true
+	you_win_screen.visible = false

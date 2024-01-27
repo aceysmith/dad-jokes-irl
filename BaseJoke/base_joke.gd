@@ -5,7 +5,7 @@ class_name BaseJoke
 signal joke_ended(node: Node)
 
 @onready var background_color = $BackgroundColor
-@onready var exit_button = $ExitButton
+@onready var exit_button = %ExitButton
 @onready var laugh_timer = $LaughTimer
 
 func _close_joke():
