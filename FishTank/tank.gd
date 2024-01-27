@@ -11,6 +11,8 @@ var right = ''
 var up = ''
 var down = ''
 var can_move = false
+func disable_movement():
+	can_move = false
 func enable_movement():
 	can_move = true
 func _ready():

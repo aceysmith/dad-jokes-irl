@@ -484,31 +484,42 @@ shape = SubResource("RectangleShape2D_6rqou")
 position = Vector2(110, 598)
 
 [node name="punchline" type="Node2D" parent="." index="6"]
+visible = false
+z_index = 100
+position = Vector2(186, 555)
 
 [node name="Sprite2D" type="Sprite2D" parent="punchline" index="0"]
-position = Vector2(186, 522)
 scale = Vector2(0.0757812, 0.0757812)
 texture = ExtResource("5_i7fhl")
+flip_h = true
 
 [node name="Label" type="Label" parent="punchline" index="1"]
-offset_left = 139.0
-offset_top = 476.0
-offset_right = 235.0
-offset_bottom = 551.0
+offset_left = -47.0
+offset_top = -47.0
+offset_right = 49.0
+offset_bottom = 28.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
-text = "Do you know how to drive this thing??"
+text = "How did you know how to drive this thing?!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="JokeIntro" parent="." index="7" instance=ExtResource("5_f1aww")]
+unique_name_in_owner = true
 
-[node name="Timer" type="Timer" parent="." index="8"]
-wait_time = 5.0
-one_shot = true
-autostart = true
+[node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
+text = "Two fish are sitting in a tank..."
+
+[node name="InstructionsContainer" parent="." index="9"]
+offset_top = 520.0
+offset_bottom = 620.0
+
+[node name="InstructionsLabel" parent="InstructionsContainer" index="0"]
+text = "Left, Right, Up, Down, Enter to move"
+
+[node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
+text = "One turns to the other and says:"
 
 [connection signal="area_shape_entered" from="ColorRect/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="ColorRect/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

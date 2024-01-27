@@ -70,31 +70,19 @@ offset_bottom = 127.054
 position = Vector2(360, 382)
 scale = Vector2(3, 3)
 
-[node name="Label" type="Label" parent="." index="6"]
-offset_left = 154.0
-offset_top = 273.0
-offset_right = 545.0
-offset_bottom = 296.0
-text = "What is an astronauts favorite part of a computer?"
-
-[node name="Timer" type="Timer" parent="." index="7"]
+[node name="Timer" type="Timer" parent="." index="6"]
 wait_time = 3.0
 one_shot = true
 
-[node name="punchline" type="Label" parent="." index="8"]
-visible = false
-offset_left = 296.0
-offset_top = 322.0
-offset_right = 372.0
-offset_bottom = 345.0
-text = "Spacebar!"
+[node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
+text = "What is an astronauts favorite part of a computer?"
 
-[node name="glove" type="Sprite2D" parent="." index="9"]
+[node name="glove" type="Sprite2D" parent="." index="8"]
 scale = Vector2(2, 2)
 texture = ExtResource("6_rqhdw")
 centered = false
 
-[node name="ColorRect" type="ColorRect" parent="." index="10"]
+[node name="ColorRect" type="ColorRect" parent="." index="9"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -106,6 +94,12 @@ offset_right = 487.0
 offset_bottom = 474.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="InstructionsContainer" parent="." index="10"]
+visible = false
+
+[node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
+text = "The \"space\" bar!"
 
 [connection signal="gui_input" from="Sprite2D/Control2" to="." method="_on_control_2_gui_input"]
 [connection signal="gui_input" from="Sprite2D/Control3" to="." method="_on_control_3_gui_input"]

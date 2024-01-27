@@ -1,7 +1,6 @@
 extends BaseJoke
 
 const CAT = preload("res://Meow-tain/cat.tscn")
-@onready var punchline = $punchline
 @onready var catgencat = $catgencat
 
 var can_click = true
@@ -18,10 +17,8 @@ func set_cooldown():
 func _on_area_2d_body_entered(body):
 	if body is Cat:
 		if body.velocity.y == 0 and body.can_win:
-			punchline.visible = true
 			stop_spawn = true
 			get_tree().call_group("cats", "stop_moving")
-			print("you win!")
 			wrap_up_joke()
 
 

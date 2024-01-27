@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwkgq2rmtxyms"]
+[gd_scene load_steps=3 format=3 uid="uid://bwkgq2rmtxyms"]
 
 [ext_resource type="Script" path="res://BaseJoke/base_joke.gd" id="1_uh7gc"]
+[ext_resource type="Texture2D" path="res://BaseJoke/text_box.png" id="2_ybkos"]
 
 [node name="Joke" type="Node2D"]
 script = ExtResource("1_uh7gc")
@@ -22,5 +23,84 @@ text = "X"
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
+
+[node name="JokeSetupContainer" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 180.0
+offset_top = 100.0
+offset_right = 540.0
+offset_bottom = 200.0
+texture = ExtResource("2_ybkos")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 200, 200)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="JokeSetupLabel" type="Label" parent="JokeSetupContainer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 340.0
+offset_bottom = 80.0
+text = "<Add Joke Setup Here>"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="InstructionsContainer" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 180.0
+offset_top = 310.0
+offset_right = 540.0
+offset_bottom = 410.0
+texture = ExtResource("2_ybkos")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 200, 200)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="InstructionsLabel" type="Label" parent="InstructionsContainer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 340.0
+offset_bottom = 80.0
+text = "<Add Instructions Here>"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="JokePunchlineContainer" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 10
+offset_left = 180.0
+offset_top = 520.0
+offset_right = 540.0
+offset_bottom = 620.0
+texture = ExtResource("2_ybkos")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 200, 200)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="JokePunchlineLabel" type="Label" parent="JokePunchlineContainer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 340.0
+offset_bottom = 80.0
+text = "<Add Joke Punchline Here>"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="ExitButton" to="." method="_close_joke"]

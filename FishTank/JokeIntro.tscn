@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhq71qvb8mj5j"]
+[gd_scene load_steps=2 format=3 uid="uid://dhq71qvb8mj5j"]
 
 [ext_resource type="Texture2D" uid="uid://tbocv46oh888" path="res://FishTank/fish-asset/Realistic_Fish_Head_HD.png" id="1_anpn1"]
-[ext_resource type="Script" path="res://FishTank/JokeIntro.gd" id="1_jyg5y"]
 
 [node name="JokeIntro" type="Control"]
 layout_mode = 3
@@ -10,48 +9,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jyg5y")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 834.0
-offset_bottom = 790.0
-
-[node name="two-fish" type="Label" parent="."]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 56.0
-offset_right = 533.0
-offset_bottom = 101.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "two fish in a tank..."
-
-[node name="i cant drive" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 78.0
-offset_top = 130.0
-offset_right = 645.0
-offset_bottom = 175.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "do you know how to drive this thing?"
+offset_right = 720.0
+offset_bottom = 720.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(514, 452)
+position = Vector2(506.001, 344)
 rotation = 1.5708
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_anpn1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(244, 452)
+position = Vector2(236.001, 344)
 rotation = 1.5708
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_anpn1")
 flip_v = true
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
