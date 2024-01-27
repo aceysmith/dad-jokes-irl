@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://w36g7jyh6bnb"]
+[gd_scene load_steps=8 format=3 uid="uid://w36g7jyh6bnb"]
 
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_7hv6r"]
 [ext_resource type="Script" path="res://SpaceMan/SpaceMan.gd" id="2_jfta8"]
 [ext_resource type="Texture2D" uid="uid://bxxj6lxkuymel" path="res://SpaceMan/space-sprites/360_F_264279006_WDXxV3OHjAOoHqH7iiLDrg23p0947g7U.jpg" id="3_hik6m"]
 [ext_resource type="Texture2D" uid="uid://o1hkv6gvqkki" path="res://SpaceMan/space-sprites/7546214.png" id="3_qh4by"]
 [ext_resource type="PackedScene" uid="uid://cdh4ap1x42t0q" path="res://SpaceMan/Ship.tscn" id="5_1qm8d"]
+[ext_resource type="Texture2D" uid="uid://cuoj8u3ji4l23" path="res://SpaceMan/space-sprites/glove.png" id="6_rqhdw"]
 
 [sub_resource type="Theme" id="Theme_qp1xe"]
 
@@ -29,35 +30,58 @@ offset_bottom = 455.0
 texture = ExtResource("3_hik6m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="4"]
-position = Vector2(348, 582)
+position = Vector2(360, 582)
 scale = Vector2(0.578125, 0.578125)
 texture = ExtResource("3_qh4by")
 
-[node name="Control" type="Control" parent="." index="5"]
+[node name="Control2" type="Control" parent="Sprite2D" index="0"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 294.0
-offset_top = 641.0
-offset_right = 402.0
-offset_bottom = 666.0
+offset_left = -230.054
+offset_top = -32.8648
+offset_right = 34.9459
+offset_bottom = 43.1352
 
-[node name="Ship" parent="." index="6" instance=ExtResource("5_1qm8d")]
-visible = false
-position = Vector2(353, 406)
+[node name="Control3" type="Control" parent="Sprite2D" index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -228.324
+offset_top = 103.784
+offset_right = -152.324
+offset_bottom = 129.784
+
+[node name="Control4" type="Control" parent="Sprite2D" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 98.5945
+offset_top = 102.054
+offset_right = 174.595
+offset_bottom = 128.054
+
+[node name="Control" type="Control" parent="Sprite2D" index="3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -93.4054
+offset_top = 102.054
+offset_right = 14.5946
+offset_bottom = 127.054
+
+[node name="Ship" parent="." index="5" instance=ExtResource("5_1qm8d")]
+position = Vector2(360, 382)
 scale = Vector2(3, 3)
 
-[node name="Label" type="Label" parent="." index="7"]
+[node name="Label" type="Label" parent="." index="6"]
 offset_left = 154.0
 offset_top = 273.0
 offset_right = 545.0
 offset_bottom = 296.0
 text = "What is an astronauts favorite part of a computer?"
 
-[node name="Timer" type="Timer" parent="." index="8"]
+[node name="Timer" type="Timer" parent="." index="7"]
 wait_time = 3.0
 one_shot = true
 
-[node name="punchline" type="Label" parent="." index="9"]
+[node name="punchline" type="Label" parent="." index="8"]
 visible = false
 offset_left = 296.0
 offset_top = 322.0
@@ -65,32 +89,26 @@ offset_right = 372.0
 offset_bottom = 345.0
 text = "Spacebar!"
 
-[node name="Control2" type="Control" parent="." index="10"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 215.0
-offset_top = 563.0
-offset_right = 480.0
-offset_bottom = 639.0
+[node name="glove" type="Sprite2D" parent="." index="9"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_rqhdw")
+centered = false
 
-[node name="Control3" type="Control" parent="." index="11"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 216.0
-offset_top = 642.0
-offset_right = 292.0
-offset_bottom = 668.0
+[node name="ColorRect" type="ColorRect" parent="." index="10"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 233.0
+offset_top = 424.0
+offset_right = 487.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Control4" type="Control" parent="." index="12"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 405.0
-offset_top = 641.0
-offset_right = 481.0
-offset_bottom = 667.0
-
-[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="gui_input" from="Sprite2D/Control2" to="." method="_on_control_2_gui_input"]
+[connection signal="gui_input" from="Sprite2D/Control3" to="." method="_on_control_3_gui_input"]
+[connection signal="gui_input" from="Sprite2D/Control4" to="." method="_on_control_4_gui_input"]
+[connection signal="gui_input" from="Sprite2D/Control" to="." method="_on_control_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="gui_input" from="Control2" to="." method="_on_control_2_gui_input"]
-[connection signal="gui_input" from="Control3" to="." method="_on_control_3_gui_input"]
-[connection signal="gui_input" from="Control4" to="." method="_on_control_4_gui_input"]

@@ -4,18 +4,21 @@ const SPRITE_0002 = preload("res://SpaceMan/space-sprites/Sprite-0002.png")
 @onready var label = $Label
 @onready var timer = $Timer
 @onready var punchline = $punchline
+@onready var glove = $glove
 
 func _ready():
-	#Input.set_custom_mouse_cursor(SPRITE_0002, Input.CURSOR_ARROW, Vector2())
-	pass
+	ship.show()
 
-
+func _process(delta):
+	glove.position = get_viewport().get_mouse_position()
+	
+	
+	
 func _on_control_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		print("Mouse Click/Unclick at: ", event.position)
 		timer.start()
 		punchline.show()
-		ship.show()
 
 		ship.launch_ship()
 
@@ -27,13 +30,16 @@ func _on_timer_timeout():
 func _on_control_2_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		print("explode")
+		ship.destroy_ship()
 
 
 func _on_control_3_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		print("explode")
+		ship.destroy_ship()
 
 
 func _on_control_4_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		print("explode")
+		ship.destroy_ship()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdh4ap1x42t0q"]
+[gd_scene load_steps=22 format=3 uid="uid://cdh4ap1x42t0q"]
 
 [ext_resource type="Script" path="res://SpaceMan/Ship.gd" id="1_3720t"]
 [ext_resource type="Texture2D" uid="uid://tyibohqmqcbh" path="res://SpaceMan/space-sprites/Main Ship - Engines - Base Engine.png" id="2_ddi4y"]
 [ext_resource type="Texture2D" uid="uid://dp2hxlxvesxt0" path="res://SpaceMan/space-sprites/Main Ship - Base - Full health.png" id="3_6rdwa"]
 [ext_resource type="Texture2D" uid="uid://djdk2rjjvybko" path="res://SpaceMan/space-sprites/Main Ship - Engines - Base Engine - Powering.png" id="4_rk6vw"]
 [ext_resource type="Texture2D" uid="uid://d4ne01ydf381l" path="res://SpaceMan/space-sprites/Main Ship - Engines - Base Engine - Idle.png" id="5_71ixx"]
+[ext_resource type="Texture2D" uid="uid://cjob5vxoxwrni" path="res://SpaceMan/space-sprites/Kla'ed - Fighter - Destruction.png" id="6_5g4q0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axbji"]
 atlas = ExtResource("4_rk6vw")
@@ -68,17 +69,75 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kghu"]
+atlas = ExtResource("6_5g4q0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg8b6"]
+atlas = ExtResource("6_5g4q0")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2b3u"]
+atlas = ExtResource("6_5g4q0")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evn8l"]
+atlas = ExtResource("6_5g4q0")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im0pw"]
+atlas = ExtResource("6_5g4q0")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efbyw"]
+atlas = ExtResource("6_5g4q0")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_567kj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kghu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg8b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2b3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evn8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im0pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efbyw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Ship" type="Node2D"]
 script = ExtResource("1_3720t")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="ship" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="ship"]
 texture = ExtResource("2_ddi4y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="ship"]
 texture = ExtResource("3_6rdwa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ship"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_rfjdn")
 animation = &"blastoff"
 frame_progress = 0.628514
+
+[node name="destroy" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_567kj")
+
+[connection signal="animation_finished" from="destroy" to="." method="_on_destroy_animation_finished"]
