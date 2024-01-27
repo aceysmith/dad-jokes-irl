@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_ig5j6"]
 [ext_resource type="Script" path="res://Meow-tain/meow_tain.gd" id="2_5g87s"]
 [ext_resource type="Texture2D" uid="uid://db7nox8d24oa7" path="res://Meow-tain/catassets/Terrain (16x16).png" id="3_dp7sh"]
-[ext_resource type="Texture2D" uid="uid://7hdqdnpq344o" path="res://Meow-tain/catassets/images-4.jpg" id="3_jcq35"]
+[ext_resource type="Texture2D" uid="uid://b7bvxqfeti24d" path="res://Meow-tain/catassets/cat_GOD.png" id="3_q622y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kli61"]
 texture = ExtResource("3_dp7sh")
@@ -461,11 +461,11 @@ script = ExtResource("2_5g87s")
 color = Color(0.176471, 0.741176, 0.937255, 1)
 
 [node name="TextureRect2" type="TextureRect" parent="." index="1"]
-offset_left = 38.0
-offset_top = 265.0
-offset_right = 705.0
-offset_bottom = 672.0
-texture = ExtResource("3_jcq35")
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 723.0
+offset_bottom = 721.0
+texture = ExtResource("3_q622y")
 
 [node name="TileMap" type="TileMap" parent="." index="4"]
 tile_set = SubResource("TileSet_e5yse")

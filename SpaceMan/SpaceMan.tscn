@@ -44,6 +44,7 @@ offset_bottom = 666.0
 [node name="Ship" parent="." index="6" instance=ExtResource("5_1qm8d")]
 visible = false
 position = Vector2(353, 406)
+scale = Vector2(3, 3)
 
 [node name="Label" type="Label" parent="." index="7"]
 offset_left = 154.0
@@ -64,5 +65,32 @@ offset_right = 372.0
 offset_bottom = 345.0
 text = "Spacebar!"
 
+[node name="Control2" type="Control" parent="." index="10"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 215.0
+offset_top = 563.0
+offset_right = 480.0
+offset_bottom = 639.0
+
+[node name="Control3" type="Control" parent="." index="11"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 216.0
+offset_top = 642.0
+offset_right = 292.0
+offset_bottom = 668.0
+
+[node name="Control4" type="Control" parent="." index="12"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 405.0
+offset_top = 641.0
+offset_right = 481.0
+offset_bottom = 667.0
+
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="gui_input" from="Control2" to="." method="_on_control_2_gui_input"]
+[connection signal="gui_input" from="Control3" to="." method="_on_control_3_gui_input"]
+[connection signal="gui_input" from="Control4" to="." method="_on_control_4_gui_input"]
