@@ -3,6 +3,8 @@ extends Node2D
 @onready var jokes_box = %JokesBox
 @export var auto_play = false
 @onready var you_win_screen = %YouWinScreen
+@onready var background_music = %BackgroundMusic
+
 
 var remaining_jokes: Array[PackedScene] = []
 
@@ -20,6 +22,7 @@ func _ready():
 			joke_button.joke_selected.connect(show_joke)
 
 	if auto_play:
+		background_music.play()
 		remaining_jokes.shuffle()
 		show_next_joke()
 
@@ -46,3 +49,6 @@ func enable_free_play():
 	auto_play = false
 	jokes_box.visible = true
 	you_win_screen.visible = false
+
+func replay_music():
+	background_music.play()

@@ -105,8 +105,9 @@ offset_right = 407.0
 offset_bottom = 479.0
 text = "Free Play"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("11_lylin")
-autoplay = true
 
 [connection signal="pressed" from="YouWinScreen/Button" to="." method="enable_free_play"]
+[connection signal="finished" from="BackgroundMusic" to="." method="replay_music"]
