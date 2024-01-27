@@ -493,8 +493,8 @@ one_shot = true
 [node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
 text = "What do you call a HUGE pile of cats?"
 
-[node name="InstructionsContainer" parent="." index="9"]
-visible = false
+[node name="InstructionsLabel" parent="InstructionsContainer" index="0"]
+text = "Click to begin!"
 
 [node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
 text = "A \"Meowntain\"!"

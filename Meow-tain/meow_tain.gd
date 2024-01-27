@@ -6,8 +6,10 @@ const CAT = preload("res://Meow-tain/cat.tscn")
 var can_click = true
 var stop_spawn
 func _ready():
-	stop_spawn = false
-	set_cooldown()
+	instructions_hidden.connect(func():
+		stop_spawn = false
+		set_cooldown()
+	)
 
 func set_cooldown():
 	print('set_cooldown')
