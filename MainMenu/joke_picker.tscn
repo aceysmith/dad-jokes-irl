@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://db6jpdfsocp68"]
+[gd_scene load_steps=12 format=3 uid="uid://db6jpdfsocp68"]
 
 [ext_resource type="Script" path="res://MainMenu/joke_picker.gd" id="1_l3ia7"]
 [ext_resource type="PackedScene" uid="uid://doxto7vhpcuw7" path="res://MainMenu/joke_button.tscn" id="1_n1pko"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0tbu77wyo5ub" path="res://Meow-tain/catassets/Cat-1/Cat-1-Sitting.png" id="7_fuyih"]
 [ext_resource type="PackedScene" uid="uid://w36g7jyh6bnb" path="res://SpaceMan/SpaceMan.tscn" id="9_m56wn"]
 [ext_resource type="PackedScene" uid="uid://bibjcr2fyisnd" path="res://Meow-tain/meow_tain.tscn" id="9_u2tdk"]
+[ext_resource type="AudioStream" uid="uid://cufno2m7w7ldk" path="res://MainMenu/Dad_Rag.mp3" id="11_lylin"]
 
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
@@ -103,5 +104,9 @@ offset_top = 448.0
 offset_right = 407.0
 offset_bottom = 479.0
 text = "Free Play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_lylin")
+autoplay = true
 
 [connection signal="pressed" from="YouWinScreen/Button" to="." method="enable_free_play"]
