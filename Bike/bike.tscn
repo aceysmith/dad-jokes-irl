@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://byqd0b72f64g5"]
+[gd_scene load_steps=6 format=3 uid="uid://byqd0b72f64g5"]
 
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_j338s"]
 [ext_resource type="Script" path="res://Bike/bike.gd" id="2_bb7n3"]
 [ext_resource type="Texture2D" uid="uid://cpslqdlwhfd17" path="res://Bike/bicycle_background.png" id="3_lysuc"]
 [ext_resource type="Texture2D" uid="uid://s3xu7etmwwbt" path="res://Bike/bike.png" id="4_n0ibm"]
+[ext_resource type="Texture2D" uid="uid://ckyay126e4kjn" path="res://FishTank/fish-asset/speech-bubble-thought-bubble-comic-bubble-transparent-free-free-png.png" id="5_inwb4"]
 
 [node name="Joke" instance=ExtResource("1_j338s")]
 script = ExtResource("2_bb7n3")
@@ -23,6 +24,21 @@ texture = ExtResource("3_lysuc")
 
 [node name="BikeSprite" type="Sprite2D" parent="." index="7"]
 position = Vector2(377, 653)
-rotation = 0.0174533
 scale = Vector2(0.709375, 0.709375)
 texture = ExtResource("4_n0ibm")
+
+[node name="SleepingNoises" type="Node2D" parent="." index="8"]
+visible = false
+position = Vector2(200, 500)
+
+[node name="ThoughtCloud" type="Sprite2D" parent="SleepingNoises" index="0"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_inwb4")
+
+[node name="Label" type="Label" parent="SleepingNoises" index="1"]
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 21.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ZZZ"
