@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dw2qsj7x4gsgc"]
+
+[ext_resource type="Script" path="res://KangJump/kang.gd" id="1_im8ua"]
+[ext_resource type="Texture2D" uid="uid://dwx16g4vrlxsm" path="res://KangJump/kang-assets/Screenshot_2024-01-27_at_5.02.02_PM-removebg-preview.png" id="2_nb3q6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqv3m"]
+size = Vector2(136, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyocg"]
+atlas = ExtResource("2_nb3q6")
+region = Rect2(27, 0, 176, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3s6y"]
+atlas = ExtResource("2_nb3q6")
+region = Rect2(203, 0, 176, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vfkk"]
+atlas = ExtResource("2_nb3q6")
+region = Rect2(379, 0, 176, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwqqs"]
+atlas = ExtResource("2_nb3q6")
+region = Rect2(549, 0, 183, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_occnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyocg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3s6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vfkk")
+}],
+"loop": true,
+"name": &"WALK",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqqs")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="Kang" type="CharacterBody2D"]
+script = ExtResource("1_im8ua")
+speed = 120
+jump_speed = -100
+gravity = 400
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 29.5)
+shape = SubResource("RectangleShape2D_yqv3m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_occnu")
+animation = &"WALK"
