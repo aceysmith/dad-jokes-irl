@@ -45,6 +45,9 @@ autostart = true
 [node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
 text = "What do grapes do when you step on them?"
 
+[node name="InstructionsContainer" parent="." index="8"]
+visible = false
+
 [node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
 text = "They let out a little whine!"
 
