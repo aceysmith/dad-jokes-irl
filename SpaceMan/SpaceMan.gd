@@ -7,7 +7,7 @@ const SPRITE_0002 = preload("res://SpaceMan/space-sprites/Sprite-0002.png")
 func _ready():
 	ship.show()
 
-func _process(delta):
+func _process(_delta):
 	glove.position = get_viewport().get_mouse_position()
 	
 	

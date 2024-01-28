@@ -12,11 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://hhxq56o5xn4u" path="res://KangJump/kang-assets/empire-state-building-7845819_1280.png" id="9_sod60"]
 [ext_resource type="PackedScene" uid="uid://bibjcr2fyisnd" path="res://Meow-tain/meow_tain.tscn" id="9_u2tdk"]
 [ext_resource type="PackedScene" uid="uid://ne3iqhlnxshw" path="res://KangJump/kang_jump.tscn" id="10_5i83v"]
+[ext_resource type="Texture2D" uid="uid://bshkl0pbxoyvr" path="res://Wine/foot.png" id="11_igj0j"]
 [ext_resource type="AudioStream" uid="uid://cufno2m7w7ldk" path="res://MainMenu/Dad_Rag.mp3" id="11_lylin"]
+[ext_resource type="PackedScene" uid="uid://v0hubiwcfpbc" path="res://Wine/wine.tscn" id="12_p1phu"]
 
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
-auto_play = true
 
 [node name="JokesBox" type="HFlowContainer" parent="."]
 unique_name_in_owner = true
@@ -95,6 +96,21 @@ theme_override_font_sizes/font_size = 30
 text = "Pile Of Cats"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="JokeButton5" parent="JokesBox" instance=ExtResource("1_n1pko")]
+layout_mode = 2
+texture_normal = ExtResource("11_igj0j")
+stretch_mode = 5
+joke_packed_scene = ExtResource("12_p1phu")
+
+[node name="Label" type="Label" parent="JokesBox/JokeButton5"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 104.0
+offset_right = 205.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 30
+text = "Whine not?"
 
 [node name="YouWinScreen" type="ColorRect" parent="."]
 unique_name_in_owner = true
