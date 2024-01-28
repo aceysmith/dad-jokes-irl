@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlud8ju4fsxo8"]
+[gd_scene load_steps=6 format=3 uid="uid://dlud8ju4fsxo8"]
 
 [ext_resource type="Script" path="res://Wine/grape.gd" id="1_185mw"]
 [ext_resource type="Texture2D" uid="uid://b7gtpgntwnkr4" path="res://Wine/grapes.png" id="2_f5jgh"]
+[ext_resource type="Texture2D" uid="uid://b34i012ei5c8c" path="res://Wine/squashed_grapes.png" id="3_lsegc"]
 [ext_resource type="Texture2D" uid="uid://ckyay126e4kjn" path="res://FishTank/fish-asset/speech-bubble-thought-bubble-comic-bubble-transparent-free-free-png.png" id="3_wujgj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbq2e"]
@@ -10,8 +11,14 @@ radius = 285.797
 [node name="Grape" type="Area2D"]
 script = ExtResource("1_185mw")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Grapes" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_f5jgh")
+
+[node name="SquishedGrapes" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("3_lsegc")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(42, 22)

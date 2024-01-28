@@ -1,10 +1,12 @@
 extends Area2D
 
 class_name Grape
-@onready var sprite = $Sprite
+
 @onready var collider = $Collider
 @onready var whine_container = %WhineContainer
 @onready var whine_label = $WhineContainer/WhineLabel
+@onready var grapes = %Grapes
+@onready var squished_grapes = %SquishedGrapes
 
 signal grape_stomped()
 
@@ -33,7 +35,8 @@ func _on_area_entered(area):
 		return
 	grape_stomped.emit()
 	collider.queue_free()
-	sprite.scale = Vector2(1, .2)
+	grapes.hide()
+	squished_grapes.show()
 	move_tween.stop()
 	whine_container.show()
 	var timer: Timer = Timer.new()

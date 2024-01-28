@@ -21,7 +21,6 @@ text = "X"
 
 [node name="LaughTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 3.0
 one_shot = true
 
 [node name="JokeSetupContainer" type="NinePatchRect" parent="."]

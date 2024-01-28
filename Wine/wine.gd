@@ -5,7 +5,7 @@ var default_foot_position = 150
 var stomped_foot_position = 350
 @onready var grape_spawner_timer = $GrapeSpawnerTimer
 
-var grapes_left = 10
+var grapes_left = 6
 
 const GRAPE = preload("res://Wine/grape.tscn")
 
