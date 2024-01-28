@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://db6jpdfsocp68"]
+[gd_scene load_steps=18 format=3 uid="uid://db6jpdfsocp68"]
 
 [ext_resource type="Script" path="res://MainMenu/joke_picker.gd" id="1_l3ia7"]
 [ext_resource type="PackedScene" uid="uid://doxto7vhpcuw7" path="res://MainMenu/joke_button.tscn" id="1_n1pko"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bshkl0pbxoyvr" path="res://Wine/foot.png" id="11_igj0j"]
 [ext_resource type="AudioStream" uid="uid://cufno2m7w7ldk" path="res://MainMenu/Dad_Rag.mp3" id="11_lylin"]
 [ext_resource type="PackedScene" uid="uid://v0hubiwcfpbc" path="res://Wine/wine.tscn" id="12_p1phu"]
+[ext_resource type="Texture2D" uid="uid://cpslqdlwhfd17" path="res://Bike/bicycle_background.png" id="15_jkj3t"]
+[ext_resource type="PackedScene" uid="uid://byqd0b72f64g5" path="res://Bike/bike.tscn" id="16_5hxdj"]
 
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
@@ -111,6 +113,11 @@ offset_right = 205.0
 offset_bottom = 146.0
 theme_override_font_sizes/font_size = 30
 text = "Whine not?"
+
+[node name="BikeJokeButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
+layout_mode = 2
+texture_normal = ExtResource("15_jkj3t")
+joke_packed_scene = ExtResource("16_5hxdj")
 
 [node name="YouWinScreen" type="ColorRect" parent="."]
 unique_name_in_owner = true

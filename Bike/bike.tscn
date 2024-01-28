@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://byqd0b72f64g5"]
+
+[ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_j338s"]
+[ext_resource type="Script" path="res://Bike/bike.gd" id="2_bb7n3"]
+[ext_resource type="Texture2D" uid="uid://cpslqdlwhfd17" path="res://Bike/bicycle_background.png" id="3_lysuc"]
+[ext_resource type="Texture2D" uid="uid://s3xu7etmwwbt" path="res://Bike/bike.png" id="4_n0ibm"]
+
+[node name="Joke" instance=ExtResource("1_j338s")]
+script = ExtResource("2_bb7n3")
+
+[node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
+text = "Why did the bicycle fall over?"
+
+[node name="InstructionsLabel" parent="InstructionsContainer" index="0"]
+text = "Left and Right to balance"
+
+[node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
+text = "It was two tired!"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="6"]
+position = Vector2(360, 360)
+texture = ExtResource("3_lysuc")
+
+[node name="BikeSprite" type="Sprite2D" parent="." index="7"]
+position = Vector2(377, 653)
+rotation = 0.0174533
+scale = Vector2(0.709375, 0.709375)
+texture = ExtResource("4_n0ibm")
