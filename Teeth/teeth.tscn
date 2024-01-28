@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://df6rddsr4ft6p"]
+
+[ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_xbrwl"]
+[ext_resource type="Script" path="res://Teeth/teeth.gd" id="2_034qh"]
+
+[node name="Joke" instance=ExtResource("1_xbrwl")]
+script = ExtResource("2_034qh")
+
+[node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
+text = "Why should you never brush your teeth with your left hand?"
+
+[node name="InstructionsContainer" parent="." index="4"]
+visible = false
+
+[node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
+text = "Because a toothbrush works better!"
+
+[node name="Teeth" type="Sprite2D" parent="." index="6"]
+position = Vector2(100, 100)
+centered = false

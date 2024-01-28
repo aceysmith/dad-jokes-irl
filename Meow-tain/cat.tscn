@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dmtmururq05lc"]
+[gd_scene load_steps=30 format=3 uid="uid://dmtmururq05lc"]
 
 [ext_resource type="Script" path="res://Meow-tain/cat.gd" id="1_e43tk"]
 [ext_resource type="Texture2D" uid="uid://dni7x4ibt06ul" path="res://Meow-tain/catassets/Cat-1/Cat-1-Idle.png" id="2_fphiy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Meow-tain/components/AnimationManager.gd" id="5_7mbav"]
 [ext_resource type="Script" path="res://Meow-tain/components/MoveComponent.gd" id="6_gk0s4"]
 [ext_resource type="Script" path="res://Meow-tain/cat-col.gd" id="7_n7dkq"]
+[ext_resource type="AudioStream" uid="uid://deaqo1gc2y37u" path="res://Meow-tain/CatDrop.mp3" id="8_q0tpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51m51"]
 size = Vector2(18, 13)
@@ -203,6 +204,9 @@ shape = SubResource("RectangleShape2D_igxwl")
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="Meow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q0tpo")
 
 [connection signal="area_entered" from="cat-col" to="." method="_on_catcol_area_entered"]
 [connection signal="body_entered" from="cat-col" to="." method="_on_catcol_body_entered"]

@@ -5,6 +5,8 @@ class_name Cat
 @onready var states = $States
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var meow = $Meow
+
 var cant_move = false
 var is_touching_cat = false
 var can_win = false
@@ -20,6 +22,8 @@ func stop_moving():
 	cant_move = true
 	
 func _ready() -> void:
+	if randi() % 6 == 0:
+		meow.play()
 	add_to_group("cats")
 
 	randomize() 
