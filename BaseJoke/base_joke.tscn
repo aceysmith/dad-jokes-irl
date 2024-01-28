@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwkgq2rmtxyms"]
 
 [ext_resource type="Script" path="res://BaseJoke/base_joke.gd" id="1_uh7gc"]
-[ext_resource type="Texture2D" path="res://BaseJoke/text_box.png" id="2_ybkos"]
+[ext_resource type="Texture2D" uid="uid://260ew7fihhn3" path="res://BaseJoke/text_box.png" id="2_ybkos"]
 
 [node name="Joke" type="Node2D"]
 script = ExtResource("1_uh7gc")

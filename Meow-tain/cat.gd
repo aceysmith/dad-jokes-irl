@@ -23,9 +23,7 @@ func _ready() -> void:
 	add_to_group("cats")
 
 	randomize() 
-	var rng = RandomNumberGenerator.new()
 
-	
 	if randi() % 2:
 		animated_sprite_2d.flip_h = true
 	else:

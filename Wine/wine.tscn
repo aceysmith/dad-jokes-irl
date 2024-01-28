@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://v0hubiwcfpbc"]
+
+[ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_pwcq3"]
+[ext_resource type="Script" path="res://Wine/wine.gd" id="2_v744y"]
+[ext_resource type="Texture2D" uid="uid://bshkl0pbxoyvr" path="res://Wine/foot.png" id="3_laua7"]
+[ext_resource type="Texture2D" uid="uid://hy0mammh384p" path="res://Wine/landscape.jpg" id="3_r6tbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6p6l"]
+size = Vector2(110, 86)
+
+[node name="WineJoke" instance=ExtResource("1_pwcq3")]
+script = ExtResource("2_v744y")
+
+[node name="Landscape" type="Sprite2D" parent="." index="3"]
+position = Vector2(362, 360)
+texture = ExtResource("3_r6tbf")
+
+[node name="Foot" type="Area2D" parent="." index="4"]
+unique_name_in_owner = true
+position = Vector2(347, 283)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foot" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_laua7")
+flip_h = true
+
+[node name="FootCollider" type="CollisionShape2D" parent="Foot" index="1"]
+position = Vector2(7, -10)
+shape = SubResource("RectangleShape2D_x6p6l")
+
+[node name="PunchlineLabel" type="Label" parent="." index="5"]
+unique_name_in_owner = true
+visible = false
+offset_left = 55.0
+offset_top = 401.0
+offset_right = 637.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GrapeSpawnerTimer" type="Timer" parent="." index="6"]
+wait_time = 1.5
+autostart = true
+
+[node name="JokeSetupLabel" parent="JokeSetupContainer" index="0"]
+text = "What does a grape do when stepped on?"
+
+[node name="InstructionsContainer" parent="." index="8"]
+visible = false
+
+[node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
+text = "It lets out a little whine!"
+
+[connection signal="timeout" from="GrapeSpawnerTimer" to="." method="_on_grape_spawner_timer_timeout"]
