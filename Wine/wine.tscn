@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_pwcq3"]
 [ext_resource type="Script" path="res://Wine/wine.gd" id="2_v744y"]
+[ext_resource type="Texture2D" uid="uid://dq8xl1avvdml0" path="res://Wine/wine_pun.png" id="3_dy72r"]
 [ext_resource type="Texture2D" uid="uid://bshkl0pbxoyvr" path="res://Wine/foot.png" id="3_laua7"]
-[ext_resource type="Texture2D" uid="uid://hy0mammh384p" path="res://Wine/landscape.jpg" id="3_r6tbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6p6l"]
 size = Vector2(110, 86)
@@ -12,8 +12,8 @@ size = Vector2(110, 86)
 script = ExtResource("2_v744y")
 
 [node name="Landscape" type="Sprite2D" parent="." index="3"]
-position = Vector2(362, 360)
-texture = ExtResource("3_r6tbf")
+position = Vector2(360, 360)
+texture = ExtResource("3_dy72r")
 
 [node name="Foot" type="Area2D" parent="." index="4"]
 unique_name_in_owner = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hy0mammh384p"
-path="res://.godot/imported/landscape.jpg-d221b88eda08d50d05a34a72c1fd751b.ctex"
+uid="uid://dq8xl1avvdml0"
+path="res://.godot/imported/wine_pun.png-aa4ca0e781575f3e0434244214d6a88b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wine/landscape.jpg"
-dest_files=["res://.godot/imported/landscape.jpg-d221b88eda08d50d05a34a72c1fd751b.ctex"]
+source_file="res://Wine/wine_pun.png"
+dest_files=["res://.godot/imported/wine_pun.png-aa4ca0e781575f3e0434244214d6a88b.ctex"]
 
 [params]
 
