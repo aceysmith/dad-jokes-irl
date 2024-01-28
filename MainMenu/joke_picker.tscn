@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://db6jpdfsocp68"]
+[gd_scene load_steps=16 format=3 uid="uid://db6jpdfsocp68"]
 
 [ext_resource type="Script" path="res://MainMenu/joke_picker.gd" id="1_l3ia7"]
 [ext_resource type="PackedScene" uid="uid://doxto7vhpcuw7" path="res://MainMenu/joke_button.tscn" id="1_n1pko"]
@@ -26,12 +26,12 @@ offset_bottom = 720.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="JokeButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
+[node name="ChickenJokeButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
 texture_normal = ExtResource("3_v45wh")
 joke_packed_scene = ExtResource("4_p4tjd")
 
-[node name="Label" type="Label" parent="JokesBox/JokeButton"]
+[node name="Label" type="Label" parent="JokesBox/ChickenJokeButton"]
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 240.0
@@ -41,13 +41,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="JokeButton2" parent="JokesBox" instance=ExtResource("1_n1pko")]
+[node name="FishTankButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
 texture_normal = ExtResource("5_002wc")
 stretch_mode = 1
 joke_packed_scene = ExtResource("6_7sfc6")
 
-[node name="Label" type="Label" parent="JokesBox/JokeButton2"]
+[node name="Label" type="Label" parent="JokesBox/FishTankButton"]
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 235.0
@@ -56,12 +56,12 @@ text = "FISH TANK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="JokeButton4" parent="JokesBox" instance=ExtResource("1_n1pko")]
+[node name="SpaceManButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
 texture_normal = ExtResource("7_87v4y")
 joke_packed_scene = ExtResource("9_m56wn")
 
-[node name="Label" type="Label" parent="JokesBox/JokeButton4"]
+[node name="Label" type="Label" parent="JokesBox/SpaceManButton"]
 layout_mode = 0
 offset_right = 241.0
 offset_bottom = 238.0
@@ -69,12 +69,12 @@ theme_override_font_sizes/font_size = 30
 text = "Spaceman"
 horizontal_alignment = 1
 
-[node name="JokeButton5" parent="JokesBox" instance=ExtResource("1_n1pko")]
+[node name="KangButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
 texture_normal = ExtResource("9_sod60")
 joke_packed_scene = ExtResource("10_5i83v")
 
-[node name="Label" type="Label" parent="JokesBox/JokeButton5"]
+[node name="Label" type="Label" parent="JokesBox/KangButton"]
 layout_mode = 0
 offset_right = 238.0
 offset_bottom = 238.0
@@ -82,12 +82,12 @@ text = "Kangaroo Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="JokeButton3" parent="JokesBox" instance=ExtResource("1_n1pko")]
+[node name="MeowtainButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
 texture_normal = ExtResource("7_fuyih")
 joke_packed_scene = ExtResource("9_u2tdk")
 
-[node name="Label" type="Label" parent="JokesBox/JokeButton3"]
+[node name="Label" type="Label" parent="JokesBox/MeowtainButton"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 offset_right = 240.0
@@ -97,13 +97,13 @@ text = "Pile Of Cats"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="JokeButton5" parent="JokesBox" instance=ExtResource("1_n1pko")]
+[node name="WineJokeButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
 texture_normal = ExtResource("11_igj0j")
 stretch_mode = 5
 joke_packed_scene = ExtResource("12_p1phu")
 
-[node name="Label" type="Label" parent="JokesBox/JokeButton5"]
+[node name="Label" type="Label" parent="JokesBox/WineJokeButton"]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 104.0

@@ -33,7 +33,7 @@ func _on_area_entered(area):
 		return
 	grape_stomped.emit()
 	collider.queue_free()
-	sprite.scale = Vector2(.25, .05)
+	sprite.scale = Vector2(1, .2)
 	move_tween.stop()
 	whine_container.show()
 	var timer: Timer = Timer.new()

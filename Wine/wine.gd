@@ -1,8 +1,8 @@
 extends BaseJoke
 
 var is_stomping = false
-var default_foot_position = 300
-var stomped_foot_position = 650
+var default_foot_position = 150
+var stomped_foot_position = 350
 @onready var grape_spawner_timer = $GrapeSpawnerTimer
 
 var grapes_left = 10
@@ -35,7 +35,7 @@ func _input(event):
 
 func _on_grape_spawner_timer_timeout():
 	var grape = GRAPE.instantiate() as Grape
-	grape.position = Vector2(0, stomped_foot_position)
+	grape.position = Vector2(0, 600)
 	grape.grape_stomped.connect(grape_stomped)
 	add_child(grape)
 	grape.roll(true if randi() % 2 == 0 else false, randf_range(0.5, 2.5))
