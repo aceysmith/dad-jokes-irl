@@ -1,7 +1,6 @@
 extends BaseJoke
 const SPRITE_0002 = preload("res://SpaceMan/space-sprites/Sprite-0002.png")
 @onready var ship = $Ship
-@onready var label = $Label
 @onready var timer = $Timer
 @onready var glove = $glove
 
