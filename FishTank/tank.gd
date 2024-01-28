@@ -18,7 +18,7 @@ func enable_movement():
 func _ready():
 	# select random keys
 	randomize() 
-	var key_bindings = ['ui_left', 'ui_right', 'ui_down', 'ui_up', 'ui_accept']
+	var key_bindings = ['ui_left', 'ui_right', 'ui_down', 'ui_up', 'other-up', 'other-down', 'other-left', 'other-right']
 	key_bindings.shuffle()
 	left = key_bindings.pop_front()
 	right = key_bindings.pop_front()

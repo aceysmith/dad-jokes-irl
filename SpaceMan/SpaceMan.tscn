@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://w36g7jyh6bnb"]
+[gd_scene load_steps=10 format=3 uid="uid://w36g7jyh6bnb"]
 
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_7hv6r"]
 [ext_resource type="Script" path="res://SpaceMan/SpaceMan.gd" id="2_jfta8"]
 [ext_resource type="Texture2D" uid="uid://dh5nxss684tpc" path="res://SpaceMan/space-sprites/theFinalFrontier.png" id="3_murs0"]
 [ext_resource type="PackedScene" uid="uid://cdh4ap1x42t0q" path="res://SpaceMan/Ship.tscn" id="5_1qm8d"]
 [ext_resource type="Texture2D" uid="uid://bttmy1rb4as3l" path="res://SpaceMan/space-sprites/astro_glove.png" id="5_24kol"]
+[ext_resource type="AudioStream" uid="uid://xdmjxcy65caf" path="res://SpaceMan/space-sprites/Rocket_Explode.mp3" id="6_e22fh"]
+[ext_resource type="AudioStream" uid="uid://uy3rr0mjtil7" path="res://SpaceMan/space-sprites/Rocket_Launch.mp3" id="7_nydlo"]
+[ext_resource type="AudioStream" uid="uid://doo6yymreswck" path="res://SpaceMan/space-sprites/SpacePunchline.mp3" id="8_ealge"]
 
 [sub_resource type="Theme" id="Theme_qp1xe"]
 
@@ -101,6 +104,15 @@ visible = false
 
 [node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
 text = "The \"space\" bar!"
+
+[node name="explode-sound" type="AudioStreamPlayer2D" parent="." index="12"]
+stream = ExtResource("6_e22fh")
+
+[node name="launch" type="AudioStreamPlayer2D" parent="." index="13"]
+stream = ExtResource("7_nydlo")
+
+[node name="punchline" type="AudioStreamPlayer2D" parent="." index="14"]
+stream = ExtResource("8_ealge")
 
 [connection signal="gui_input" from="Sprite2D/Control2" to="." method="_on_control_2_gui_input"]
 [connection signal="gui_input" from="Sprite2D/Control3" to="." method="_on_control_3_gui_input"]

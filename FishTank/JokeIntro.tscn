@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhq71qvb8mj5j"]
+[gd_scene load_steps=3 format=3 uid="uid://dhq71qvb8mj5j"]
 
 [ext_resource type="Texture2D" uid="uid://tbocv46oh888" path="res://FishTank/fish-asset/Realistic_Fish_Head_HD.png" id="1_anpn1"]
+[ext_resource type="Texture2D" uid="uid://cop62i7cwj4h0" path="res://FishTank/fish-asset/fish.png" id="2_4un8a"]
 
 [node name="JokeIntro" type="Control"]
 layout_mode = 3
@@ -11,19 +12,28 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 720.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(506.001, 344)
 rotation = 1.5708
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_anpn1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(236.001, 344)
 rotation = 1.5708
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_anpn1")
 flip_v = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4un8a")
