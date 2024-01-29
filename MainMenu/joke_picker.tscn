@@ -22,11 +22,6 @@
 [node name="JokePicker" type="Node2D"]
 script = ExtResource("1_l3ia7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 715.0
-offset_bottom = 725.0
-texture = ExtResource("17_sk0vt")
-
 [node name="JokesBox" type="HFlowContainer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -138,6 +133,7 @@ offset_right = 460.0
 offset_bottom = 444.0
 theme_override_font_sizes/font_size = 50
 text = "Play"
+metadata/_edit_use_anchors_ = true
 
 [node name="FreePlayButton" type="Button" parent="MainScreen"]
 unique_name_in_owner = true
@@ -146,6 +142,7 @@ offset_top = 486.0
 offset_right = 410.0
 offset_bottom = 517.0
 text = "Free Play"
+metadata/_edit_use_anchors_ = true
 
 [node name="TitleLabel" type="Label" parent="MainScreen"]
 offset_top = 93.0
@@ -154,6 +151,7 @@ offset_bottom = 230.0
 theme_override_font_sizes/font_size = 100
 text = "Bad Dad Jokes"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Chicken" type="Sprite2D" parent="MainScreen"]
 position = Vector2(573, 536)
@@ -170,6 +168,7 @@ offset_bottom = 254.0
 theme_override_font_sizes/font_size = 18
 text = "By: Graham Baker, Lev Flowers, Adam Smith, Heidi Worley"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ForLabel" type="Label" parent="."]
 offset_top = 258.0
@@ -178,6 +177,7 @@ offset_bottom = 281.0
 theme_override_font_sizes/font_size = 14
 text = "Global Game Jam 2024"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MainScreen/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainScreen/FreePlayButton" to="." method="_on_free_play_button_pressed"]
