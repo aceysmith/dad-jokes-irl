@@ -163,6 +163,22 @@ texture = ExtResource("3_v45wh")
 unique_name_in_owner = true
 stream = ExtResource("11_lylin")
 
+[node name="ByLabel" type="Label" parent="."]
+offset_top = 231.0
+offset_right = 720.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 18
+text = "By: Graham Baker, Lev Flowers, Adam Smith, Heidi Worley"
+horizontal_alignment = 1
+
+[node name="ForLabel" type="Label" parent="."]
+offset_top = 258.0
+offset_right = 720.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 14
+text = "Global Game Jam 2024"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="MainScreen/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainScreen/FreePlayButton" to="." method="_on_free_play_button_pressed"]
 [connection signal="finished" from="BackgroundMusic" to="." method="replay_music"]
