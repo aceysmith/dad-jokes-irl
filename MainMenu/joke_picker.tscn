@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bshkl0pbxoyvr" path="res://Wine/foot.png" id="11_igj0j"]
 [ext_resource type="AudioStream" uid="uid://cufno2m7w7ldk" path="res://MainMenu/Dad_Rag.mp3" id="11_lylin"]
 [ext_resource type="PackedScene" uid="uid://v0hubiwcfpbc" path="res://Wine/wine.tscn" id="12_p1phu"]
-[ext_resource type="Texture2D" uid="uid://s3xu7etmwwbt" path="res://Bike/bike.png" id="15_7uew0"]
+[ext_resource type="Texture2D" uid="uid://cagoeru3n5fk2" path="res://Bike/bike_single.png" id="15_7kq7g"]
 [ext_resource type="PackedScene" uid="uid://byqd0b72f64g5" path="res://Bike/bike.tscn" id="16_5hxdj"]
 [ext_resource type="Texture2D" uid="uid://dywk53p8t2p1u" path="res://ChickenCrosser/chicken_background.png" id="17_sk0vt"]
 
@@ -118,7 +118,7 @@ text = "Whine not?"
 
 [node name="BikeJokeButton" parent="JokesBox" instance=ExtResource("1_n1pko")]
 layout_mode = 2
-texture_normal = ExtResource("15_7uew0")
+texture_normal = ExtResource("15_7kq7g")
 joke_packed_scene = ExtResource("16_5hxdj")
 
 [node name="MainScreen" type="Sprite2D" parent="."]
