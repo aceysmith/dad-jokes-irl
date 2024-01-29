@@ -11,6 +11,7 @@ signal instructions_hidden()
 @onready var joke_setup_container = %JokeSetupContainer
 @onready var joke_punchline_container = %JokePunchlineContainer
 @onready var instructions_container = %InstructionsContainer
+@onready var audio_stream_player = %AudioStreamPlayer
 
 const long_laugh_duration = 8
 const short_laugh_duration = 2
@@ -39,6 +40,7 @@ func wrap_up_joke():
 	if _joke_ended:
 		return
 	_joke_ended = true
+	audio_stream_player.play()
 	joke_setup_container.visible = true
 	joke_punchline_container.visible = true
 	laugh_timer.timeout.connect(_close_joke)

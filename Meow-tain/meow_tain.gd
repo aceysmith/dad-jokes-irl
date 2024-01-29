@@ -2,7 +2,6 @@ extends BaseJoke
 
 const CAT = preload("res://Meow-tain/cat.tscn")
 @onready var catgencat = $catgencat
-@onready var cat_chorus = $CatChorus
 
 var can_click = true
 var stop_spawn
@@ -22,7 +21,6 @@ func _on_area_2d_body_entered(body):
 		if body.velocity.y == 0 and body.can_win:
 			stop_spawn = true
 			get_tree().call_group("cats", "stop_moving")
-			cat_chorus.play()
 			wrap_up_joke()
 
 

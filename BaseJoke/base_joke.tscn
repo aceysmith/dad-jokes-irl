@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwkgq2rmtxyms"]
+[gd_scene load_steps=4 format=3 uid="uid://bwkgq2rmtxyms"]
 
 [ext_resource type="Script" path="res://BaseJoke/base_joke.gd" id="1_uh7gc"]
 [ext_resource type="Texture2D" uid="uid://260ew7fihhn3" path="res://BaseJoke/text_box.png" id="2_ybkos"]
+[ext_resource type="AudioStream" uid="uid://b75iw1ekfmwop" path="res://BaseJoke/RimShot.mp3" id="3_j2nc6"]
 
 [node name="Joke" type="Node2D"]
 script = ExtResource("1_uh7gc")
@@ -104,5 +105,9 @@ text = "<Add Joke Punchline Here>"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_j2nc6")
 
 [connection signal="pressed" from="ExitButton" to="." method="_close_joke"]

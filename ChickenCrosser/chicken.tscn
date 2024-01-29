@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4nmrvt3xmybg"]
+[gd_scene load_steps=6 format=3 uid="uid://b4nmrvt3xmybg"]
 
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_4n3i8"]
 [ext_resource type="Script" path="res://ChickenCrosser/chicken.gd" id="2_ye1vx"]
 [ext_resource type="Texture2D" uid="uid://dywk53p8t2p1u" path="res://ChickenCrosser/chicken_background.png" id="3_ca1qw"]
 [ext_resource type="Texture2D" uid="uid://cneo167a541l3" path="res://ChickenCrosser/chicken.png" id="4_8xnfw"]
+[ext_resource type="AudioStream" uid="uid://cxmy23q3l6lmo" path="res://ChickenCrosser/ChickenJokeRimshot.mp3" id="5_68ivq"]
 
 [node name="Joke" instance=ExtResource("1_4n3i8")]
 script = ExtResource("2_ye1vx")
@@ -27,3 +28,6 @@ text = "Press Right Arrow to find out!"
 
 [node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
 text = "To get to the other side, duh"
+
+[node name="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("5_68ivq")
