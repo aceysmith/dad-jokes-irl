@@ -7,6 +7,8 @@ class_name Grape
 @onready var whine_label = $WhineContainer/WhineLabel
 @onready var grapes = %Grapes
 @onready var squished_grapes = %SquishedGrapes
+@onready var squish_1 = $squish1
+@onready var squish_2 = $squish2
 
 signal grape_stomped()
 
@@ -33,6 +35,11 @@ func roll(go_right: bool, time_across_screen: float):
 func _on_area_entered(area):
 	if area is Grape:
 		return
+	
+	if randi() % 2:
+		squish_1.play()
+	else:
+		squish_2.play()
 	grape_stomped.emit()
 	collider.queue_free()
 	grapes.hide()

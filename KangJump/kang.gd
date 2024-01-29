@@ -2,6 +2,7 @@ extends CharacterBody2D
 @export var speed = 1200
 @export var jump_speed = -1800
 @export var gravity = 4000
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var just_jumped = false
@@ -34,6 +35,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_speed
 		animated_sprite_2d.play('jump')
+		audio_stream_player_2d.play()
 		just_jumped = true
 	
 func stop_move():

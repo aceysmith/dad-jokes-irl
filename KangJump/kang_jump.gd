@@ -21,7 +21,7 @@ func _process(delta):
 func _on_timeremains_timeout():
 	kang.stop_move()
 	kang_height.show()
-	kang_height.text = "Kangaroo Jumped: " + str(round(kang.position.y * 10)) + " ft"
+	kang_height.text = "Kangaroo Jumped: " + str(round(kang.global_position.y * 10)) + " ft"
 	await get_tree().create_timer(4).timeout
 
 	empire_height.show()

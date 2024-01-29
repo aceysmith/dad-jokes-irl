@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4lvn4of63iuh"]
+[gd_scene load_steps=13 format=3 uid="uid://b4lvn4of63iuh"]
 
 [ext_resource type="PackedScene" uid="uid://bwkgq2rmtxyms" path="res://BaseJoke/base_joke.tscn" id="1_gx2wa"]
 [ext_resource type="Script" path="res://FishTank/FishTank.gd" id="2_vad8t"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d04vgc7lts58t" path="res://FishTank/fish-asset/Terrain (16x16).png" id="4_xewpf"]
 [ext_resource type="PackedScene" uid="uid://dhq71qvb8mj5j" path="res://FishTank/JokeIntro.tscn" id="5_f1aww"]
 [ext_resource type="Texture2D" uid="uid://ckyay126e4kjn" path="res://FishTank/fish-asset/speech-bubble-thought-bubble-comic-bubble-transparent-free-free-png.png" id="5_i7fhl"]
+[ext_resource type="AudioStream" uid="uid://b2khgbpkumirp" path="res://FishTank/fish-asset/TankRimShot.mp3" id="8_3pfeh"]
+[ext_resource type="AudioStream" uid="uid://d1fup60jgh3ai" path="res://FishTank/fish-asset/TankOpeningScreen.mp3" id="8_yp2dd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwg2b"]
 resource_name = "collision"
@@ -545,6 +547,12 @@ text = "Left, Right, Up, Down, W, A, S, D to move"
 
 [node name="JokePunchlineLabel" parent="JokePunchlineContainer" index="0"]
 text = "One turns to the other and says:"
+
+[node name="AudioStreamPlayer" parent="." index="13"]
+stream = ExtResource("8_3pfeh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="14"]
+stream = ExtResource("8_yp2dd")
 
 [connection signal="area_shape_entered" from="ColorRect/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="ColorRect/Area2D" to="." method="_on_area_2d_body_entered"]

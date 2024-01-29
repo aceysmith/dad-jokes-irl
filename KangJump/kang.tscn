@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw2qsj7x4gsgc"]
+[gd_scene load_steps=10 format=3 uid="uid://dw2qsj7x4gsgc"]
 
 [ext_resource type="Script" path="res://KangJump/kang.gd" id="1_im8ua"]
 [ext_resource type="Texture2D" uid="uid://dwx16g4vrlxsm" path="res://KangJump/kang-assets/Screenshot_2024-01-27_at_5.02.02_PM-removebg-preview.png" id="2_nb3q6"]
+[ext_resource type="AudioStream" uid="uid://bauvjgim5mihb" path="res://KangJump/kang-assets/Kangaroo_Jump.mp3" id="3_chxkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqv3m"]
 size = Vector2(136, 105)
@@ -60,3 +61,6 @@ shape = SubResource("RectangleShape2D_yqv3m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_occnu")
 animation = &"WALK"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_chxkd")
